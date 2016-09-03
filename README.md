@@ -2,6 +2,8 @@
 
 Project pipeline for building an app for the browser and wrap it into natice apps with Cordova and Electron.
 
+*Not stable, might or might not work until 0.1.0*
+
 ## Dependencies
 
 - `node` and `npm`
