@@ -540,18 +540,18 @@
 
 		// Platform-specific paths: android static assets
 		"android": {
-			"res": "source/android/" // NOTE: this should be folder only
+			"res": "source/platforms/android/" // NOTE: this should be folder only
 		},
 
 		// Platform-specific paths
 		"ios": {
-			"appIcons": "source/ios/icons/**/*.png",
-			"launchImages": "source/ios/splash/**/*.{png,jpg}"
+			"appIcons": "source/platforms/ios/icons/**/*.png",
+			"launchImages": "source/platforms/ios/splash/**/*.{png,jpg}"
 		},
 
 		"osx": {
-			"appIconFile": "source/osx/icon.icns",
-			"appIcons": "source/osx/icons/**/*.png"
+			"appIconFile": "source/platforms/osx/icon.icns",
+			"appIcons": "source/platforms/osx/icons/**/*.png"
 		},
 
 		// Environment-specific index templates
