@@ -1,0 +1,47 @@
+
+<div class="view-game" :class="classes">
+
+	<!-- Show status header -->
+	<status-header :main="self" :is-active-on="statusHeaderIsActive"></status-header>
+
+	<!-- Overlays -->
+	<div class="view-game-overlays">
+
+		<!-- NOTE: the new transition-group tag can be used here to enable vue transitions -->
+		<!-- 
+			`transition-group-foo.scss` should have:
+
+			.transition-group-foo-enter {}
+			.transition-group-foo-enter-active {}
+			.transition-group-foo-move {}
+			.transition-group-foo-leave {}
+			.transition-group-foo-leave-active {}
+
+		-->
+		<!-- <transition-group tag="div" name="transition-group-foo"></transition-group> -->
+
+		<overlay
+			v-for="(view, index) in activeOverlays"
+			:key="index"
+			:main="self"
+			:view-id="view.id"
+			:view-props="view.props"
+			:own-index="index"
+			:active-index="activeOverlayIndex"></overlay>
+
+	</div>
+
+	<!-- Actual active card views -->
+	<!-- <transition-group tag="div" :name="'transition-group-' + activeCards[activeCardIndex]"></transition-group> -->
+	<div class="view-game-cards">
+		<card
+			v-for="(view, index) in activeCards"
+			:key="index"
+			:main="self"
+			:view-id="view.id"
+			:view-props="view.props"
+			:own-index="index"
+			:active-index="activeCardIndex"></card>
+	</div>
+
+</div>

@@ -2,36 +2,43 @@
 
 	// App meta data (used to build mobile projects, manifests etc.)
 	"meta": {
-		"title": "I Am Legend",
-		"company": "Rigid Games",
-		"url": "http://iamlegendapp.com",
-		"appStartUrl": "http://iamlegendapp.com/app",
-		"email": "info@iamlegendapp.com",
-		"description": "You need to find shelter before sundown. You still have your notebook and watch. It’s 3rd of May, 11:30.",
+		"title": "Some App Name",
+		"company": "Company A",
+		"url": "http://app-by-company.com",
+		"appStartUrl": "http://app-by-company.com/app",
+		"email": "info@app-by-company.com",
+		"description": "This is the description of your app, used in meta tags and elsewhere. Write good copy.",
 		"languageCode": "en",
 		"languageCodeCountry": "EN",
 		"themeColor": "#007AFF",
-		"darkStatusBarContent": false,
-		"id": "iamlegend",
-		"com": "rigidgames",
-		"version": "0.1.0",
+		"darkStatusBarContent": false, // Also see Cordova plugin preferences further down
+		"id": "someappname",
+		"com": "companya",
+		"version": "1.0.0",
 
 		// Windows app
 		"windowsStore": {
-			"id": "9wzdncrfj140"
+			"id": "abc123def456"
 		},
 
 		// iOS app
 		"appStore": {
-			"appName": "iamlegend", // App Store app's safe name, used in iTunes URLs
+
+			// App Store app's safe name, used in iTunes URLs
+			"appName": "someappname",
+
+			// Used in smart app banner of web version
 			// "affiliate": "foo",
 			// "appargument": "bar",
-			"id": "839654297" // App Store app ID of the native version
+
+			 // App Store app ID of the native version
+			"id": "12345678"
+
 		},
 
 		// Android app
 		"googlePlay": {
-			"id": "tv.iamlegend.android"
+			"id": "tv.someappname.android"
 		}
 
 	},

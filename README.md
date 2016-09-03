@@ -58,9 +58,37 @@ Go to the folder you would like to use for your project, then install Das Build:
 
 	npm install das-build --save-dev
 
-THen you can initialize your project:
+Then you can initialize your project:
 
 	npm run init
+
+
+
+### Project file structure
+
+You can easily get started with all the bare essentials by copying `sample/` from Das Build's repository. In the future we will add a project kickstart script to create this structure for you automatically.
+
+Your actual client code is kept under `source/`. Here you will have:
+
+- `source/svg/` SVG assets that will be merged into one file for the app.
+- `source/views/`: Vue.js _components_ that compose your app's views. This includes view models, view styles and templates.
+- `source/styles/`: Base CSS, SCSS or LESS stylesheets. These will be compiled for the app and minified in production.
+- `source/manifests/`: templates for composing various manifest files required by browsers, Cordova or Electron.
+- ...
+
+
+
+### Project.json
+
+All your app's metadata and pipeline configuration lies in `project.json`. This is an extensive declarative configuration file that is somewhat delicate but also quite powerful.
+
+When setting up a new project, take your time going through this file once and set values to your liking.
+
+As an added benefit, Das Build will ignore JavaScript-style comments when parsing this file even though standard JSON would not allow them. You will find detailed documentation in the sample file.
+
+
+
+# Using the pipeline
 
 This will install the `node_modules` needed by the gulp pipeline. `bower_components` defined in `bower.json` will also be fetched so they can be built in the app package. For more info on Bower, see below.
 
@@ -125,23 +153,17 @@ Due to some caveats with using `npm run` for controlling the build pipeline and 
 	../node_modules/cordova/bin/cordova run ios --nobuild --emulator
 	../node_modules/cordova/bin/cordova run ios --target=iPhone-6s
 
+## Electron
+
+Electorn builds go under `electron/release/`. The packager will have to download the version of Electron defined in your `project.json`, but it will also cache it under `electron/cache/`.
+
 
 
 # Client code
 
-## Viewmodels
+## Vue
 
-In each view model, the following variables are available.
-
-	# Consistent variable referring to the view model itself
-	self
-
-	# Parameters passed to the view model instance in parent template
-	params
-	element
-	templateNodes
-	veight
-	app
+`Das Build` isn't completely coupled with a specific client code stack, but it is designed for developing apps on Vue.js effortlessly. It also incudes automated systems for dealing with app icons, SVG assets, app manifest files and other essentials.
 
 
 
@@ -193,6 +215,7 @@ iOS relies on an extensive set of specifically named and sized PNG icons and spl
 
 
 
+
 ## Good to know
 
 - `npm run watch` cannot watch `project.json` - restart when making changes to this file.
@@ -200,40 +223,11 @@ iOS relies on an extensive set of specifically named and sized PNG icons and spl
 - Copying the app icons and launch images to the app package while deploying sometimes fails. Redeploying should help.
 - When deploying to an iOS device, usually the script hangs and the app freezes. There seems to be a bug in Cordova related to hiding the splash screen. Kill the script, the app process on the device and remove the cable, and you can launch the app.
 - The preferences `DisallowOverscroll`, `SuppressesLongPressGesture` and `Suppresses3DTouchGesture` might cause issues with event handling/triggering. If you have issues with click events not firing, try messing with those.
-
-
-
-# DEPRECATED BELOW THIS LINE!!
-
-See `do/` for scripts that handle project-level tasks while developing.
-
-Normally you probably want to use `do/watch` to watch for changes in the source code and automatically build a browser version as you make changes.
-
-## Project dependencies
-
-- Base dependencies and build pipeline: `npm`
-- For launching iOS emulator from command line: `ios-sim`
-- For installing and debug iPhone apps from the command line: `ios-deploy`
-
-## Client-side libraries
-
-See `bower.json` and `source/`.
-
-
-
-## Build pipeline
-
-The build pipeline is quite powerful and supports multiple targets. `source/` is compiled into `core/`, the latter of which is then still recompiled for various build targets - along with `public/` assets.
-
-The gulp tasks you are supposed to be using are found under `gulp/routines/`. These serve as an API for running the individual subtasks that are needed for each use case. Routines only depend on subtasks, not each other, and contain no logic other than running subtasks.
-
-For example, there is a subtask for building the browser version, but the *routine* actually knows how to prune the project folder before building a new version. Things get more complicated with dependencies between build targets and watching for changed source files in order to automatically recompile.
+- When building Cordova bundles, the app icons might take a few runs to update for whatever reason. Keep building if you're not seeing updated icons in your bundles.
 
 
 
 ## Deployment
-
-Using [Flightplan](https://github.com/pstadler/flightplan) for deploying browser version to remote servers?
 
 When deploying the browser version on a server, make sure that the server is equipped to serve all the static assets with correct mime types. Especially the *appcache* manifest file.
 
