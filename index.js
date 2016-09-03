@@ -5,6 +5,7 @@ module.exports = function (rawArgs) {
 
 
 	// Config
+	self.defaultConfigFileLocation = './'; // not `__dirname`
 	self.configPaths = ['project.json', 'project-local.json'];
 	self.helpersPath = 'helpers/';
 	self.tasksPath = 'tasks/';
@@ -53,7 +54,7 @@ module.exports = function (rawArgs) {
 		var _ = require('lodash');
 
 		if (!pathPrefix) {
-			pathPrefix = './';
+			pathPrefix = self.defaultConfigFileLocation;
 		}
 
 		// Read each config file
