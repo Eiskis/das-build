@@ -1,0 +1,138 @@
+#!/usr/bin/env bash
+
+# Handle working directory
+cd "$(dirname "$0")"
+cd ..
+
+
+
+# Run scripts as defined in package.json
+eval "npm run $1"
+
+
+
+# # Run scripts as defined in package.json
+# if [ "$1" == "clear" ]; then
+# 	npm run clear
+
+# elif [ "$1" == "build" ]; then
+# 	npm run build
+
+# elif [ "$1" == "init" ]; then
+# 	npm run init
+
+# elif [ "$1" == "devbuild" ]; then
+# 	npm run devbuild
+
+# elif [ "$1" == "watch" ]; then
+# 	npm run watch
+
+# elif [ "$1" == "purge" ]; then
+# 	npm run purge
+
+# elif [ "$1" == "update" ]; then
+# 	npm run update
+
+# elif [ "$1" == "init-cordova" ]; then
+# 	npm run init-cordova
+
+# elif [ "$1" == "build-cordova" ]; then
+# 	npm run build-cordova
+
+# elif [ "$1" == "devbuild-cordova" ]; then
+# 	npm run devbuild-cordova
+
+# elif [ "$1" == "purge-cordova" ]; then
+# 	npm run purge-cordova
+
+# elif [ "$1" == "watch-cordova" ]; then
+# 	npm run watch-cordova
+
+# elif [ "$1" == "build-android" ]; then
+# 	npm run build-android
+
+# elif [ "$1" == "devbuild-android" ]; then
+# 	npm run devbuild-android
+
+# elif [ "$1" == "watch-android" ]; then
+# 	npm run watch-android
+
+# elif [ "$1" == "build-ios" ]; then
+# 	npm run build-ios
+
+# elif [ "$1" == "devbuild-ios" ]; then
+# 	npm run devbuild-ios
+
+# elif [ "$1" == "watch-ios" ]; then
+# 	npm run watch-ios
+
+# elif [ "$1" == "build-osx" ]; then
+# 	npm run build-osx
+
+# elif [ "$1" == "devbuild-osx" ]; then
+# 	npm run devbuild-osx
+
+# elif [ "$1" == "android-list" ]; then
+# 	npm run android-list
+
+# elif [ "$1" == "android" ]; then
+# 	npm run android
+
+# elif [ "$1" == "android-device" ]; then
+# 	npm run android-device
+
+# elif [ "$1" == "ios-list" ]; then
+# 	npm run ios-list
+
+# elif [ "$1" == "ios-device" ]; then
+# 	npm run ios-device
+
+# elif [ "$1" == "ios" ]; then
+# 	npm run ios
+
+# elif [ "$1" == "ios-5" ]; then
+# 	npm run ios-5
+
+# elif [ "$1" == "ios-6" ]; then
+# 	npm run ios-6
+
+# elif [ "$1" == "ios-6p" ]; then
+# 	npm run ios-6p
+
+# elif [ "$1" == "requirements" ]; then
+# 	npm run requirements
+
+# else
+# 	echo "Das Build is here! These are the available commands:\n\n"
+# 	echo "clear\n"
+# 	echo "build\n"
+# 	echo "init\n"
+# 	echo "devbuild\n"
+# 	echo "watch\n"
+# 	echo "purge\n"
+# 	echo "update\n"
+# 	echo "init-cordova\n"
+# 	echo "build-cordova\n"
+# 	echo "devbuild-cordova\n"
+# 	echo "purge-cordova\n"
+# 	echo "watch-cordova\n"
+# 	echo "build-android\n"
+# 	echo "devbuild-android\n"
+# 	echo "watch-android\n"
+# 	echo "build-ios\n"
+# 	echo "devbuild-ios\n"
+# 	echo "watch-ios\n"
+# 	echo "build-osx\n"
+# 	echo "devbuild-osx\n"
+# 	echo "android-list\n"
+# 	echo "android\n"
+# 	echo "android-device\n"
+# 	echo "ios-list\n"
+# 	echo "ios-device\n"
+# 	echo "ios\n"
+# 	echo "ios-5\n"
+# 	echo "ios-6\n"
+# 	echo "ios-6p\n"
+# 	echo "requirements\n"
+
+# fi

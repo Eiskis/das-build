@@ -5,7 +5,11 @@ module.exports = function (rawArgs) {
 
 
 	// Config
-	self.defaultConfigFileLocation = './'; // not `__dirname`
+
+	// not `__dirname` (this script)
+	// not './' (current folder)
+	self.defaultConfigFileLocation = '../../'; // Backtrack from under project's node_modules folder
+
 	self.configPaths = ['project.json', 'project-local.json'];
 	self.helpersPath = 'helpers/';
 	self.tasksPath = 'tasks/';
