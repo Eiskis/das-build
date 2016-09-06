@@ -6,8 +6,7 @@
   "bin": {
     "das-build": "./bin/das-build"
   },
-  "dependencies": {},
-  "devDependencies": {
+  "dependencies": {
     "bower": "^1.7.9",
     "cordova": "^6.3.1",
     "del": "^2.2.2",
@@ -63,6 +62,7 @@
     "swig-marked": "0.0.1",
     "yargs": "^5.0.0"
   },
+  "devDependencies": {},
   "scripts": {
     "clear": "gulp clear",
     "build": "gulp build",
