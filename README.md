@@ -17,41 +17,6 @@ This project is build on `npm`. You can use the `npm run` command to run the rou
 
 Here are some scripts you might want to use:
 
-```
-"scripts": {
-	"clear": "gulp clear",
-	"build": "gulp build",
-	"init": "npm install && gulp init",
-	"devbuild": "gulp build --debug",
-	"watch": "gulp watch --debug",
-	"purge": "gulp uninit && rm -rf node_modules",
-	"update": "bower prune && bower update",
-	"init-cordova": "gulp init-cordova",
-	"build-cordova": "gulp build-cordova",
-	"devbuild-cordova": "gulp build-cordova --debug",
-	"purge-cordova": "gulp uninit-cordova",
-	"watch-cordova": "gulp watch-cordova --debug",
-	"build-android": "gulp build-cordova --cordovaplatform android",
-	"devbuild-android": "gulp build-cordova --cordovaplatform android --debug",
-	"watch-android": "gulp watch-cordova --cordovaplatform android --debug",
-	"build-ios": "gulp build-cordova --cordovaplatform ios",
-	"devbuild-ios": "gulp build-cordova --cordovaplatform ios --debug",
-	"watch-ios": "gulp watch-cordova --cordovaplatform ios --debug",
-	"build-osx": "gulp build-electron --electronplatform osx",
-	"devbuild-osx": "gulp build-electron --electronplatform osx --debug",
-	"android-list": "cd cordova && cordova run android --list",
-	"android": "cd cordova && cordova emulate android --nobuild --emulator",
-	"android-device": "cd cordova && cordova run android --nobuild --device",
-	"ios-list": "cd cordova && cordova run ios --list",
-	"ios-device": "cd cordova && cordova run ios --nobuild --device",
-	"ios": "cd cordova && cordova emulate ios --nobuild --emulator",
-	"ios-5": "cd cordova && cordova emulate ios --nobuild --target=iPhone-5s",
-	"ios-6": "cd cordova && cordova emulate ios --nobuild --target=iPhone-6s",
-	"ios-6p": "cd cordova && cordova emulate ios --nobuild --target=iPhone-6s-Plus",
-	"requirements": "cd cordova && cordova requirements"
-}
-```
-
 
 
 ### Get started

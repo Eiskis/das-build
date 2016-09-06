@@ -3,6 +3,9 @@
   "version": "0.0.2",
   "description": "Project pipeline for building an app for the browser and wrap it into natice apps with Cordova and Electron.",
   "main": "index.js",
+  "bin": {
+    "das-build": "./bin/das-build"
+  },
   "dependencies": {},
   "devDependencies": {
     "bower": "^1.7.9",
